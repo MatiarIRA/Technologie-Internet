@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="magasin.xsl"?>
+<magasin><!-- clients et objets de Pierre Dac -->
+    <clients>
+        <client no="C12"><nom>Olga Laxie</nom></client>
+        <client no="C35"><nom>Odile Déserte</nom></client>
+        <client no="C36"><nom>Séraphin Dufin</nom></client>
+    </clients>
+    <articles>
+        <article no="Al">
+            <description>Passoire non percée pouvant servir de casserole</description>
+            <prix>14.95</prix>
+        </article>
+        <article no="A9">
+            <description>Trou pour planter un arbre</description>
+            <prix>9 . 95</prix>
+        </article>
+        <article no="A10">
+            <description>Mannequin géant pour haute couture</description>
+            <prix>19.99</prix>
+        </article>
+    </articles>
+    <commandes>
+     <commande client="C12" article="Al">
+        <quantite>2</quantite>
+        <commentaire>Livraison immédiate</commentaire>
+     </commande>
+     <commande client="C35" article="A10">
+        <quantite>5</quantite>
+        <commentaire>Livrer au Be étage</commentaire>
+     </commande>
+     <commande client="C12" article="A9">
+        <quantite>2</quantite>
+     </commande>
+     <commande client="C12" article="A10">
+        <quantite>2</quantite>
+     </commande>
+    </commandes>
+</magasin>

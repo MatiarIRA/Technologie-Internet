@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="livre">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="auteur" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="année" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="prix"/>
+            </xs:sequence>
+            <xs:attribute name="edition" use="required"><!-- name here has a relation to a simpleTaype coming after -->
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="paperback"/>
+                        <xs:enumeration value="reliee"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+ <!--     <xs:simpleType name="edition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="paperback"/>
+            <xs:enumeration value="reliee"/>
+        </xs:restriction>
+    </xs:simpleType>
+-->
+
+
+    <xs:element name="année">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:totalDigits value="4"/>
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="9"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="prix">
+        <xs:complexType>
+            <xs:sequence/>
+            <xs:attribute name="monnaie"  use="required"/>
+            <!-- le "type" en haut est enleve car on va le specifer a partir de simpleType en bas pour avoir les restrictions -->
+            <xs:attribute name="valeur" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="monnaie">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="USD"/>
+            <xs:enumeration value="EUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="auteur">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="prenom" type="xs:string"/>
+                <xs:element name="nom" type="xs:string"/>
+
+                <xs:element name="pays" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

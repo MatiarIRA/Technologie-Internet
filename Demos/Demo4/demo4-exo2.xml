@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="demo4-exo2.xsl"?>
+<recette>
+    <entete>
+        <auteur>Casimir</auteur>
+        <titre>Recette du Gloubi-Boulga</titre>
+        <remarque>Pour une personne</remarque>
+    </entete>
+    
+    <procedure>
+        <texte>
+            Remplir un saladier avec de la confiture 
+            de fraises, du chocolat râpé, des bananes 
+            écrasées, de la moutarde forte, des saucisses 
+            de Toulouse écrasées tièdes mais crues.	
+        </texte>
+        <liste>
+            <item>confiture de fraises</item>
+            <item>chocolat râpé</item>
+            <item>bananes écrasées</item>
+            <item>moutarde forte</item>
+            <item>saucisses de Toulouse écrasées tièdes mais crues</item>.
+        </liste>
+        <texte>
+            Mélanger vigoureusement jusqu'à obtenir 
+            une bouillie marron-clair. Il est normal 
+            qu'il y ait des grumeaux.
+        </texte>
+        <texte>
+            Les proportions sont environ égales pour
+            tous les ingrédients, mais il est possible 
+            de varier selon les goûts de chacun.
+        </texte>
+    </procedure>
+    
+</recette>

@@ -1,0 +1,41 @@
+namespace cat = "http://www.iro.umontreal.ca/lapalme/wine-catalog"
+datatypes xs = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+include "WineCatalog.rnc" {
+
+# la racine est cellar-book, meme-si on a une autre RNC incule qui a sa propre racine et regarde la facine decrire la racine ici-->
+    start = cellar-book 
+}
+
+cellar = element cellar {
+            element wine {
+               attribute code {xs:IDREF},
+               element purchaseDate {xs:date},
+               element quantity {xs:nonNegativeInteger},
+               element rating {attribute stars {xs:positiveInteger}?}?,
+               element comment {Comment}?
+            }*
+         }
+
+name = element name {
+                   element first {text}?
+                 & element family {text}?
+                 & element initial {text}?
+               }
+               
+cellar-book =  element cellar-book {
+                  wine-catalog,
+                  element owner {Owner},
+                  element location {Address}?,
+                  cellar
+               }
+         
+Address = element street {text},
+          element city {text},
+          element province {"AB"|"BC"|"MB"|"NB"|"NL"|"NT"|
+                            "NS"|"NU"|"ON"|"QC"|"SK"|"YT"},
+          element postal-code {PostalCodeCA}
+
+Owner = name, Address
+
+PostalCodeCA = xs:string {pattern="[A-Z][0-9][A-Z] [0-9][A-Z][0-9]"}

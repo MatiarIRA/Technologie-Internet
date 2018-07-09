@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--Créez une fonction qui :
+demande la saisie d'un rayon ;
+retourne la surface du cercle de ce rayon
+Affichez le résultat de l'appel à cette fonction en cliquant sur le bouton.-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+    <head><title></title>
+        <script type="text/javascript">
+            function circleSurface(rayon){
+                var result = rayon * rayon * 3.14;
+                alert(result);
+               
+            }           
+        </script>
+    </head>
+    <body>
+        <form name="surface">
+
+            <input type="text" name="raduis" id="r" />
+            <input type="button" name="ChngColor" value="test me" onclick ="circleSurface(document.getElementById('r').value)" />          
+        </form>
+    </body>
+    
+</html>

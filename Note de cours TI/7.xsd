@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <!-- c'est un type complexe qu'on a reutilise en bas-->
+     <xs:complexType name="person">
+           <xs:sequence>
+               <xs:element name="name" type="xs:string"></xs:element>
+               <xs:element name="lastname" type="xs:string"></xs:element>
+                <!-- cet ordre doit etre respecte name puis lastname car on a applique "sequence" si on veut ecrire dans n'importe ordre 
+                   on utilise "all"-->
+           </xs:sequence>
+    </xs:complexType>
+    <xs:element name="student" type="person"></xs:element><!-- reutilisation le type "person" -->
+    
+    
+</xs:schema>

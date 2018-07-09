@@ -1,0 +1,52 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+#Auteurs: Mohammad Hossein ERFANIAN AZMOUDEH (20031314) et Hanifa MALLEK (P1005515)
+
+# La base de données (bibliotheque) contient des informations sur vos livres 
+# (livre) comprenant des personnages et sur leur(s) auteur(s) (auteur). 
+# Pour chaque auteur, la base de données doit avoir les informations suivantes:
+# son nom (nom) et son prénom (prenom) dans n’importe quel ordre, suivis optionnellement
+#dans cet ordre par le pays d’où l’auteur est originaire (pays), par un URL pour une photo 
+#(photo) et par un commentaire (commentaire). Chaque auteur devrait avoir un attribut (ident) qui l’identifie uniquement.
+#Pour les livres, la base de données doit avoir les informations suivantes en respectant l’ordre:
+
+start = bibliotheque
+
+bibliotheque = element bibliotheque{
+    livre+ , auteur+ 
+    }
+auteur = element auteur {
+    attribute ident {xsd:ID},
+    Auteur   
+    }
+# Pattern d'Auteur
+Auteur = (nom & prenom) , (pays , photo , commentaire)?     # tout le bloc est optionnelle
+nom = element nom {text}
+prenom = element prenom {text}
+pays = element pays {text}
+photo = element photo {xsd:anyURI}
+commentaire = element commentaire {text}
+
+#deux attributs, la langue du livre (xsd:language) et  une liste de référence aux auteurs (auteurs) 
+# ainsi que les éléments suivants: le titre (titre), l’année de publication (annee) et le prix (prix)
+#qui va être donné par sa valeur (valeur) qui contient optionnellement un attribut qui donne la monnaie 
+#dans laquelle le livre a été acheté (monnaie). De plus, chaque livre peut avoir les informations optionnelles suivantes: 
+#la couverture du livre (couverture) sous forme d’un URL, un film associé au livre (film) aussi sous forme d’URL et 
+#un commentaire sur le livre (commentaire). Finalement, on peut avoir des personnages (personnage) avec les mêmes
+#informations que pour un auteur en excluant l'identifiant.
+livre = element livre{
+    attribute langue {xsd:language}, 
+    auteurs, 
+    (titre , annee, prix ) , couverture? , film? , commentaire? , personnage* 
+    }
+auteurs = attribute auteurs {xsd:IDREFS}
+titre = element titre{text}
+annee = element annee{xsd:gYear}
+prix = element prix {
+    attribute monnaie {"USD"|"CAD"|"EUR"}?, #le prof a dit que l'attribut "monnaie" appartient a l'element 'prix' et non pas de 'valeur'
+    valeur}
+valeur = element valeur {xsd:integer}
+couverture = element couverture {xsd:anyURI}
+film = element film {xsd:anyURI}
+personnage = element personnage {Auteur}
+
+

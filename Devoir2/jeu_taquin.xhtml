@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Auteurs: Mohammad Hossein ERFANIAN AZMOUDEH (20031314) et
+             Hanifa MALLEK (P1005515) -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Jeu de Taquin</title>
+        <link href="taquin.css" rel="stylesheet" type="text/css"/>       
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="taquin.js"></script>
+    </head>
+    <body>
+        <form id="formulaire" action="" enctype="application/x-www-form-urlencoded"
+            method="post">
+            <fieldset>
+                <legend>Description</legend>
+                <label>URL de l'image</label>
+                <input name="image" tabindex="2" required="" type="url" id="photo" 
+                    size="40" placeholder="http://orig02.deviantart.net/160f/f/2010/118/8/5/pretty_nature_by_tylercuddlebutt.jpg"/>
+                <br/>
+                <label>Nombre de lignes</label>
+                <input name="row" tabindex="2" required="" type="text"
+                    size="5" placeholder="2" id="r"/>
+                
+                <label>Nombre de Colomnes</label>
+                <input name="colomn" tabindex="2" required="" type="text"
+                    size="5" placeholder="2" id="c"/>
+                
+                <label>Affichage de numéros</label>
+                <input name="numbers" tabindex="2" required="" type="checkbox" onchange="showCellIndex(this)"/>
+                
+                <input name="printGrid" tabindex="7" type="button" value="Afficher" id="imagePrinter"
+                    onclick="dimImage($('#photo').val(), $('#r').val(), $('#c').val())"/>
+                    <!-- createGrid(document.getElementById('r').value, document.getElementById('c').value); -->
+                <input name="trim" tabindex="7" type="button" value="Brasser les tuiles"
+                    id="mix"/>
+                <label><span style="color:#ddd">space</span>Deplacements:<span id="count">0</span></label>
+            </fieldset>
+        </form>
+    </body>
+</html>

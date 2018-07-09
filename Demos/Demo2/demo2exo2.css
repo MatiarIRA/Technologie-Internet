@@ -1,0 +1,11 @@
+#essai{
+    background-image: url("blue-box.png");
+    width: 160px;
+    height: 95px;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    padding: 12px 10px;
+    font-size: 29px;
+}
+

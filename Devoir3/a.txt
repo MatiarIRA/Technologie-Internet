@@ -1,0 +1,1 @@
+create table plateau_sportif_table(ID int not null auto_increment,Nom varchar(50) not null, Prenom varchar(50) not null, Surnom varchar(15) not null, Mot_de_passe varchar(20) not null, Etat varchar(1) not null constraint chk_Etat check (Etat in('J','G')),PRIMARY KEY(ID));

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--contient des livres et des articles ;
+les informations nécessaires pour un livre sont : 
+son titre général ;
+les noms des auteurs ;
+ses tomes et pour chaque tome, leur nombre de pages ;
+des informations générales sur son édition comme par exemple le nom de l'éditeur, le lieu d'édition, le lieu d'impression, son numéro ISBN ;
+les informations nécessaires pour un article sont : 
+son titre ;
+les noms des auteurs ;
+ses références de publication : nom du journal, numéro des pages, année de publication et numéro du journal 
+on réservera aussi un champ optionnel pour un avis personnel. -->
+
+
+<!ELEMENT bibliographie (livre+)>
+<!ELEMENT livre (titre, auteur+, tome+, edition)>
+<!ELEMENT tome (nombre_de_page+)>
+<!ELEMENT edition (editeur, lieu, ISBN)>
+<!ELEMENT titre (#PCDATA) >
+<!ELEMENT auteur (#PCDATA) >
+<!ELEMENT nombre_de_page (#PCDATA) >
+<!ELEMENT editeur (#PCDATA) >
+<!ELEMENT lieu ANY >
+<!ELEMENT ISBN (#PCDATA) >
+

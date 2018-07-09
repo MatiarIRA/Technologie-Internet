@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!-- this is a note -->
+<root>
+<note date="3 janvier">
+    <to>Bob</to>
+        <from>Alice</from>
+        <heading>Reminder</heading>
+        <body>Don't forget me this weekend!</body>
+</note>
+<note date="5 janvier"> <!-- this is another note -->
+    <to>Alice</to>
+    <from>Bob</from>
+    <body>No problem, see you soon</body>
+</note>
+<note />
+</root>

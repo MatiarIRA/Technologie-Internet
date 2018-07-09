@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--Créer une page web comportant une phrase, dont un groupe de mots, de couleur noire au chargement, doit prendre la couleur :
+rouge au passage de la souris ;
+citron vert (lime) en réponse à un click ;
+bleu marine (navy) en réponse à un double click.
+Indication: Les changements de couleurs d'une zone de texte font appel à onmouseover, onmouseout, 
+onclick et ondblclick, ainsi qu'aux méthodes de contrôle du style par JavaScript appliquées à l'objet courant indiqué par this.-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+    <head><title></title>
+        <script type="text/javascript">
+            function redColor(x){
+                x.style.color='red';
+            } 
+            function normalColor(x){
+                x.style.color='black';
+            } 
+            function limeColor(x){
+                x.style.color='lime';
+            } 
+            function navyColor(x){
+                x.style.color='navy';
+            } 
+        </script>
+    </head>
+    <body>
+        <p onmouseover="redColor(this)" onmouseout="normalColor(this)" onclick="limeColor(this)" ondblclick="navyColor(this)">This is a magic text.</p>
+    </body>
+    
+</html>

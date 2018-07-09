@@ -1,0 +1,57 @@
+default namespace = "http://www.iro.umontreal.ca/lapalme/wine-catalog"
+datatypes xs = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+start = wine-catalog
+
+wine-catalog = element wine-catalog {
+                  # needed because this schema will be imported
+                  attribute xml:base{text}?, 
+                  wine*
+               }
+
+wine = element wine{
+           attribute name {text},
+           attribute appellation {text},
+           attribute classification {text},
+           attribute code {xs:ID},
+           attribute format {Format},
+           properties, 
+           origin, 
+           ( element tasting-note {Comment}
+             | element food-pairing {Comment}
+             | comment
+           )*, 
+           element price {xs:decimal}, 
+           element year {xs:gYear}
+       }
+
+properties = element properties {
+                 element color {Color},
+                 element alcoholic-strength {Percentage},
+                 element nature {text}?
+             }
+
+origin = element origin {
+                 element country {text},
+                 element region {text},
+                 element producer {text}
+          }
+
+Format = "375ml" | "750ml" | "1l" 
+         | "magnum"         #  1.5 litres
+         | "jeroboam"       #  3 litres
+         | "rehoboam"       #  4.5 litres
+         | "mathusalem"     #  6 litres
+         | "salmanazar"     #  9 litres
+         | "balthazar"      # 12 litres
+         | "nabuchodonosor" # 15 litres
+                     
+Comment = mixed {element emph {text}* & element bold {text}*}
+comment = element comment{Comment}
+
+Color = "red" | "white" | "rosé"
+
+Percentage = xs:decimal {
+              minInclusive = "0"
+              maxInclusive = "100"
+              fractionDigits ="2"}

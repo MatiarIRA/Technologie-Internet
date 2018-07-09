@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT professeur (info_personnel, financements, collaborations, contributions)>
+<!ATTLIST professeur ID_Bureau ID #REQUIRED >
+<!ELEMENT info_personnel (nom_prof,prenom,image,fonction,adresse,telephone,page_acceuil,niveau_etude,interets_recherche)>
+<!ELEMENT nom_prof (#PCDATA) >
+<!ELEMENT prenom (#PCDATA) >
+<!ELEMENT image EMPTY >
+<!ATTLIST image src CDATA #REQUIRED >
+<!ELEMENT fonction (#PCDATA) >
+<!ELEMENT adresse (#PCDATA)>
+<!ATTLIST adresse num_bureau IDREF #REQUIRED >
+<!ELEMENT telephone (#PCDATA) >
+<!ATTLIST telephone poste CDATA #REQUIRED >
+<!ELEMENT page_acceuil (#PCDATA)>
+<!ELEMENT niveau_etude (diplome, universite, annee) >
+<!ELEMENT diplome (#PCDATA)>
+<!ELEMENT universite (#PCDATA)>
+<!ELEMENT annee (#PCDATA)>
+<!ELEMENT interets_recherche (interet+) >
+<!ELEMENT interet (#PCDATA) >
+<!ELEMENT collaborations (collaboration+)>
+<!ELEMENT collaboration (institution) >
+<!ELEMENT institution (nom) >
+<!ELEMENT nom (#PCDATA) >
+<!ELEMENT financements (financement+) >
+<!ELEMENT financement (#PCDATA) >
+<!ELEMENT contributions (contribution+) >
+<!ELEMENT contribution (auteurs,nom_article,referance_article)>
+<!ELEMENT auteurs (auteur+) >
+<!ELEMENT auteur (#PCDATA) >
+<!ELEMENT nom_article (#PCDATA) >
+<!ELEMENT referance_article (nom_journal*, conference?) >
+<!ATTLIST referance_article 
+page_fin CDATA #REQUIRED
+page_debut CDATA #REQUIRED
+rang_article CDATA #REQUIRED
+num_vol CDATA #REQUIRED
+annee CDATA #REQUIRED>
+<!ELEMENT nom_journal (#PCDATA) >
+<!ELEMENT conference (#PCDATA) >
+
+
+
+

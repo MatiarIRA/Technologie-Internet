@@ -1,0 +1,59 @@
+body {
+  background-image: url("http://p3.storage.canalblog.com/30/73/210892/56734618.jpg");
+  font-family: sans-serif ;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  margin: 8px 0px 0px 0px;
+}
+
+h2 {
+  margin: 5px 0px 0px 0px;
+}
+
+body > div {
+  margin-top: 50px;
+  padding: 15px;
+  font-size: 20px;
+}
+
+body > div > ul > li > hr {
+  margin-right: 10%;
+}
+
+body > div > ol > li {
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+body > div > hr {
+  color: black;
+  width: 70%;
+  height: 2px;
+}
+
+body > div {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: rgba(255,255,255,0.75);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+body > div > p {
+  text-align: justify;
+}
+
+body > div > ul {
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: left;
+}

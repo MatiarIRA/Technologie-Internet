@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bibliographie>
+    <titre>Calcul Quantique</titre>
+        <article type="non publié">
+            <titre>Quantum Proofs for Classical Theorem</titre>
+            <auteurs>
+                <prenom>Drucker</prenom>
+                <nom>de Wolf</nom>
+            </auteurs>
+            <uri>arxiv:quant-ph/0910.3376v1</uri>
+        </article>
+        <livre xml:lang = "en">
+            <titre>Quantum Computation and Quantum Information</titre>
+            <auteurs>
+                <prenom>Nielsen</prenom><nom>Chuang</nom>
+                <éditeur>Cambridge U. Press</éditeur>
+                <livre/>
+            </auteurs>
+        </livre>
+</bibliographie>

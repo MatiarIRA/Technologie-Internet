@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> </xs:schema>
+
+
+
+<!DOCTYPE stylesheet [
+<!ENTITY cr "<xsl:text>
+</xsl:text>">
+]>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:gl="http://www.iro.umontreal.ca/lapalme"
+    version="2.0">
+    <xsl:strip-space elements="*"/>
+    <xsl:output omit-xml-declaration="yes"/>
+    
+    <xsl:template match="/">
+        <xsl:text>{</xsl:text><xsl:apply-templates>
+            <xsl:with-param name="indent"  select="0"/>
+        </xsl:apply-templates><xsl:text>}</xsl:text>
+    </xsl:template>
+    
+    <!-- end current line, indent $str by $nb spaces -->
+    <xsl:template name="doIndent">
+        <xsl:param name="nb" as="xsd:integer"/>
+        <xsl:param name="str" as="xsd:string"/>
+        &cr;<xsl:value-of 
+            select="concat(string-join(for $i in 1 to $nb return ' ',''),$str)"/>
+    </xsl:template>
+    
+    <!-- produce a JavaScript String:
+         if the parameter is a number or a boolean, output the string;
+         otherwise put the string between quotes escaping quotes within it-->
+    <xsl:function name="gl:jsString">
+        <xsl:param name="s"/>
+        <xsl:value-of select="
+            if (string(number($s))!='NaN' or matches($s,'true|false','i')) then $s 
+            else concat('&quot;',replace($s,'&quot;','\\&quot;'),'&quot;')
+            "/> 
+    </xsl:function>
+    
+    <xsl:template name="outArray">
+        <xsl:param name="indent" as="xsd:integer"/>
+        <xsl:call-template name="doIndent">
+            <xsl:with-param name="nb" select="$indent+3" as="xsd:integer"/>
+            <xsl:with-param name="str" 
+                select="concat(gl:jsString(string(current-grouping-key())),
+                ':[')"/>
+        </xsl:call-template>
+        <!-- output its contents "recursively" -->
+        <xsl:apply-templates select="current-group()">
+            <xsl:with-param name="indent" select="$indent+6" as="xsd:integer"/>
+            <xsl:with-param name="outputName" select="false()"/>
+        </xsl:apply-templates>
+        <xsl:call-template name="doIndent">
+            <xsl:with-param name="nb" select="$indent+3" as="xsd:integer"/>
+            <xsl:with-param name="str" select="']'"/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <!-- an attribute is its name followed by its text value -->
+    <xsl:template match="@*"><xsl:param name="indent" as="xsd:integer"/>
+        <xsl:call-template name="doIndent">
+            <xsl:with-param name="nb" select="$indent" as="xsd:integer"/>
+            <xsl:with-param name="str" 
+                select="concat(gl:jsString(name()),': ',gl:jsString(.))"/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <!-- a text node is the value of its content -->
+    <xsl:template match="text()">
+        <xsl:value-of select="gl:jsString(normalize-space(.))"/>
+    </xsl:template>
+    
+    <!-- any child node -->
+    <xsl:template match="*">
+        <xsl:param name="indent" as="xsd:integer"/>
+        <xsl:param name="outputName" select="true()"/>
+        <!-- output the name of the tag if so desired -->
+        <xsl:if test="$outputName">
+            <xsl:call-template name="doIndent">
+                <xsl:with-param name="nb" select="$indent"/>
+                <xsl:with-param name="str" select="gl:jsString(name())"/>
+            </xsl:call-template>
+            <xsl:text>: </xsl:text>
+        </xsl:if>
+        <xsl:choose>
+            <!-- node with a single child text node which must be non-empty-->
+            <xsl:when test="count(text()[string-length(normalize-space(.))>0])=1">
+                <xsl:apply-templates>
+                    <xsl:with-param name="indent" select="$indent+3"/>
+                </xsl:apply-templates>
+            </xsl:when>
+            <!-- any type of nodes -->
+            <xsl:otherwise>
+                <xsl:text>{</xsl:text>
+                <!-- loops over all groups of identical tags -->
+                <xsl:for-each-group select="@*|*|text()" 
+                    group-adjacent="local-name()">
+                    <xsl:choose>
+                        <xsl:when test="count(current-group())=1">
+                            <!-- a single element group-->
+                            <xsl:apply-templates select=".">
+                                <xsl:with-param name="indent" select="$indent+3"/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- many element groups within braces-->
+                            <xsl:call-template name="outArray">
+                                <xsl:with-param name="indent" select="$indent"/>
+                            </xsl:call-template>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:if test="position()!=last()">
+                        <xsl:text>,</xsl:text>
+                    </xsl:if>
+                </xsl:for-each-group>
+                <!-- end current group -->
+                <xsl:call-template name="doIndent">
+                    <xsl:with-param name="nb" select="$indent"/>
+                    <xsl:with-param name="str" select="'}'"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:if test="position()!=last()">
+            <xsl:text>,</xsl:text>
+        </xsl:if>
+    </xsl:template>
+    
+</xsl:stylesheet>
+
+

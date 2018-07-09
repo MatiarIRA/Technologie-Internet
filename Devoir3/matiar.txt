@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Connexion</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+<style>
+/* styles for validation helpers */
+.field-validation-error { color: #ea0000; font-size: 14px; font-weight: bold; }
+
+.field-validation-valid { display: none; }
+
+.field-required label:after { content: ' *'; color: #ea0000;}
+
+input.input-validation-error, textarea.input-validation-error { border: 1px solid #ea0000; }
+
+input[type="checkbox"].input-validation-error { border: 0 none; }
+
+.validation-summary-errors { color: #ea0000; font-weight: bold; font-size: 1.1em; }
+
+p.validation-summary-errors { font-size: 1.5em; }
+
+p.validation-summary-errors a { color: #ea0000; }
+
+</style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="content-wrapper content-wrapper--header">
+            <div class="center">
+                <a href="index.php" class="logo" title="Accueil">
+                    <img src="images/logo.png" class="logo-img" />
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="content-wrapper main-content">
+            <section>
+                <h1 class="center">Mon compte</h1>
+                <div class="section-content container">
+                    <?php 
+                        if(!$isValid) {
+                            echo "<p class='error-message'>$error</p>";
+                        }
+                    ?>
+                    <form method="post" class="form form--login">
+                        <h2>Connexion</h2>
+                        <fieldset class="form-group">
+                            <legend class="form-group-title font-header hidden">Identifiant</legend>
+                            <div class="input-set">
+                                <label for="username" class="form-label">Nom d'utilisateur (surnom)</label>
+                                <span class="field-validation-valid" data-valmsg-for="username" data-valmsg-replace="true"></span>
+                                <input id="username" name="username" type="text" class="form-control" data-val-required="Veuillez fournir votre surnom." data-val="true">
+                            </div>
+                            <div class="input-set">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <span class="field-validation-valid" data-valmsg-for="password" data-valmsg-replace="true"></span>
+                                <input id="password" name="password" type="password" class="form-control" data-val-required="Veuillez fournir votre mot de passe." data-val="true">
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-form">Se connecter</button>
+                    </form>
+                    <div class="signup">
+                        <p><span class="title">Pas encore de compte?</span></p>
+                        <a type="button" href="signup.php" class="btn btn-link link-signup">Créer un compte</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

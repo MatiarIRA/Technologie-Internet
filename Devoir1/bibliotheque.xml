@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Auteurs: Mohammad Hossein ERFANIAN AZMOUDEH (20031314) et
+             Hanifa MALLEK (P1005515) -->
+
+<?xml-model href="bibliotheque.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-stylesheet type="text/xsl" href="biblio-livres.xsl"?>
+<!--<?xml-stylesheet type="text/xsl" href="biblio-auteurs.xsl"?>-->
+
+<bibliotheque>
+    <livre langue ="en" auteurs="M00003">
+        <titre>La Mysterieuse Affaire De Styles</titre>
+        <annee>1972</annee>
+        <prix monnaie="CAD"> 
+            <valeur>12</valeur>
+        </prix>
+        <couverture>http://2.bp.blogspot.com/-JHdsJI36Vd8/T3t4NB-ERaI/AAAAAAAABok/WXZjfzp36SM/s1600/Kamakura20-%2BEngakuji20.jpg</couverture>
+        <film>https://www.youtube.com/watch?v=_ljBzClbR7M</film>
+        <commentaire>La victime est une vieille dame très riche retrouvée morte dans sa chambre, 
+            verrouillée empoisonnée avec de la strychnine. Qui donc a pu commettre le meurtre? 
+           On a du recourir à l'aide providentielle d'un policier Belge réfugié en Angleterre, 
+           une de ses vieilles connaissances, un curieux bonhomme dénommé Hercule Poirot...
+        </commentaire>
+        <personnage>
+            <nom>Hercule</nom>
+            <prenom>Poireau</prenom>
+            <pays>Belgique</pays>
+            <photo>http://deredactie.be/polopoly_fs/1.1721099!image/350236151.jpg_gen/derivatives/landscape670/350236151.jpg</photo>
+            <commentaire>Un détective belge de fiction créé par la romancière anglaise Agatha Christie. 
+                Avec Miss Marple, c'est l'un des personnages les plus célèbres de la romancière, 
+                apparaissant dans 33 romans et 51 nouvelles, publiés entre 1920 et 1975.mmentaire
+            </commentaire>
+        </personnage>
+        <personnage>
+            <prenom>Jane</prenom>
+            <nom>Marple</nom>
+            <pays>Angleterre</pays>
+            <photo>https://upload.wikimedia.org/wikipedia/en/b/b5/Joan_Hickson.jpg</photo>
+            <commentaire>
+                Une vieille fille caustique, curieuse, sachant tout, entendant tout : la parfaite détective à domicile
+            </commentaire>
+        </personnage>
+    </livre>
+    <livre langue ="fr" auteurs="M00004">
+        <titre>Le Vieil Homme et La Mer</titre>
+        <annee>1953</annee>
+        <prix monnaie="EUR"> 
+            <valeur>16</valeur>
+        </prix>
+        <couverture>http://fr.web.img2.acsta.net/r_1280_720/medias/nmedia/00/02/33/00/69216314_ph4.jpg</couverture>
+        <film>https://www.youtube.com/watch?v=BcagCBvCXPs</film>
+        <commentaire>
+            Le vieil homme part tout seul, sur la mer, dans sa petite barque, à la recherche d'un grand poisson. 
+            Le grand poisson mord à son hameçon. Pendant trois jours et deux nuits le vieux luttera contre lui. 
+            c'est l'histoire du courage humain, de l'énergie humaine, de l'amour des êtres; 
+            c'est le poème de la pêche au gros poisson, c'est la victoire du cœur sur le désespoir.
+        </commentaire>
+        <personnage>
+            <nom>Wells</nom>
+            <prenom>Santiago</prenom>           
+            <pays>Espagne</pays>
+            <photo>http://scrat.hellocoton.fr/img/classic/telechargez-gratuitement-le-vieil-homme-et-la-mer-d-ernest-hemingway-3140257.jpg</photo>
+            <commentaire>
+                Un vieux pêcheur pauvre nommé Santiago qui n’a rapporté aucun poisson durant 84 jours. 
+            </commentaire>
+        </personnage>
+    </livre>
+    <livre langue="fr" auteurs="M00003">
+       <titre>N or M ?</titre>
+       <annee>1941</annee>
+       <prix monnaie="EUR">
+           <valeur>45</valeur>
+       </prix>
+       <couverture>https://s-media-cache-ak0.pinimg.com/originals/3d/8c/06/3d8c06375b1ecc7c9584b6694f6e8321.jpg</couverture>
+    </livre>
+    <livre langue ="en" auteurs="M00002 M00001" >
+        <titre>Fundamentals of Algorithmics</titre>
+        <annee>1989</annee>
+        <prix monnaie="CAD"> 
+            <valeur>52</valeur>
+        </prix>
+        <couverture>http://rcdn-1.fishpond.co.nz/0002/133/340/528617/6.jpeg</couverture>
+        <commentaire>
+            Livre décrivant les bases et preuves essentielles à l'introduction à l'algorithmique
+        </commentaire>
+    </livre>
+    <auteur ident = "M00001" >
+        <prenom>Gill</prenom>
+        <nom>Brassard</nom>
+        <pays>Canada</pays>
+        <photo>http://diro.umontreal.ca/typo3temp/_processed_/csm_brassard_b6e289f3f2.jpg</photo>
+        <commentaire>
+            Professeur à l'université de montréal et ses dernières recherches portes sur l'informatique quantique
+        </commentaire>
+    </auteur>
+    <auteur ident="M00002" >
+        <nom>Bratley</nom>
+        <prenom>Paul</prenom>       
+        <pays>Canada</pays>
+        <photo>https://www.iro.umontreal.ca/~echo/40e_Web/Bios/Bratley/Bratley_sgpum_w1.jpg</photo>
+        <commentaire>
+            Fondateur du DIRO en 1966 et premier directeur de celui-ci 
+        </commentaire>
+    </auteur>
+       
+    <auteur ident="M00003" >
+        <prenom>Agatha</prenom>
+        <nom>Christie</nom>
+        <pays>Angletaire</pays>
+        <photo>http://www.ibelieveinadv.com/wp-content/uploads/2012/04/Avelar_Machado_Antique_Bookstore_Agatha_Christie_ibelieveinadv.jpg </photo>
+        <commentaire>
+            Agatha Mary Clarissa Miller naquit en 1890 à Torquay, au coeur de la Riviera anglaise. 
+            Autour d'elle règnait le confort. Dans son autobiographie, écrite septante ans plus tard, 
+            elle raconte longuement cette période idyllique passée entre sa nurse, ses poupées, 
+            son chien Toby. Elle n'allait pas à l'école mais s'en était inventé une, peuplées d'amies fictives. 
+            La petite avait une imagination enfiévrée, nourrie des contes puisés dans la bibliotheque familiale. 
+            Très tôt, cette fille de rentiers élevée dans un cocon rassurant développa une fascination 
+            pour le mystère et les situations macabres. 
+        </commentaire>
+    </auteur>
+    <auteur ident="M00004">
+        <nom>Ernest</nom>
+        <prenom>Hemingway</prenom>
+        <pays>USA</pays>
+        <photo>https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzODM5NjUwMzE2/ernest-hemingway-9334498-1-402.jpg</photo>
+        <commentaire>
+            Ecrivain américain. Hemingway naquit à Oak Park dans l'Illinois, le 21 juillet 1899. 
+            Délaissant les études universitaires, il devint reporter au Kansas City Star puis ambulancier 
+            en Italie pendant la Première Guerre mondiale, avant de s'enrôler dans l'infanterie italienne, 
+            où il fut grièvement blessé. À la fin de la guerre, il devint correspondant à Paris du Star de Toronto. 
+            C'est là qu'il commença une carrière littéraire, encouragé par des écrivains américains expatriés. 
+            À partir de 1927, Hemingway s'installa successivement à Key West en Floride, en Espagne et en Afrique.  
+        </commentaire>
+    </auteur>  
+</bibliotheque>

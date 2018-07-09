@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+    <title>IFT3225: Rapport du TP3</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div>
+        <h1>IFT3225: Rapport du TP3</h1>
+
+        <ol>
+            <li>
+                <p><a href="#membres">Membres de l'&eacute;quipe</a></p>
+            </li>
+            <li>
+                <p><a href="#intro">Introduction</a></p>
+            </li>
+            <li>
+                <p><a href="#experience">Exp&eacute;rience</a></p>
+            </li>
+            <li>
+                <p><a href="#schema">Sch&eacute;ma du mod&egrave;le relationnel</a></p>
+            </li>
+            <li>
+                <p><a href="#fichiers">Liste des fichiers pour t&eacute;l&eacute;charger</a></p>
+            </li>
+            <li>
+                <p><a href="#execute">Executer le programme</a></p>
+            </li>
+        </ol>
+
+        <hr/>
+
+        <h2 id="membres">Membres de l'&eacute;quipe</h2>
+        <ul>
+            <li>
+                <p>Mohammad Hossein ERFANIAN AZMOUDEH</p>
+            </li>
+            <li>
+                <p>Hanifa MALLEK</p>
+            </li>
+        </ul>
+        <hr/>
+        <h2 id="intro">Introduction</h2>
+
+        <p> L'id&eacute;e &eacute;tait de cr&eacute;er des pages PHPs pour gerer les donnees d'un club sprotif comme CEPSUM dans une base de donn&eacute;es implementant a l'aide de langage SQL.<br/> Le programme est concu a etre utiliser par deux types usagers,
+            Joueur et Administrateur. chaqu'un entre eux a son propre interface et les fonctionalit&eacute;s plus ou moins different offerent par le programme.
+            <p>Voici des cordonn&eacute;es pour tester le programme:</p>
+            <ul>
+                <li>
+                    <p>Un joueur: Surnom: Arian / Mot de passe: 123456</p>
+                </li>
+                <li>
+                    <p>L'Administrateur: Surnom: Matiar / Mot de passe: 123456</p>
+                </li>
+            </ul>
+            <hr/>
+            <h2 id="experience">Exp&eacute;rience</h2>
+
+            <p> Cette exp&eacute;rience nous a montr&eacute; l'autre phase de la programmation dynamique en manipulant PHP et la gestion des bases de donn&eacute;es gr&agrave;ce &agrave; MYSQL. <br /> Le int&eacute;ressant est que php permet de faciliter
+                non seulement la manipulation des base de donn&eacute;es, mais aussi l'interaction avec le serveur.<br /> Le plus difficile &eacute;tait d'ajuster l'interface selon les besoins, mais en s'appyant sur le richesse et la robustesse du CSS
+                ceci &eacute;tait plus pertinent <br /> et interessant surtout pour la gallerie photo.</p>
+            <hr/>
+            <h2 id="schema">Sch&eacute;ma du mod&egrave;le relationnel</h2>
+            <p><b>Adherents:</b> (<u>ID_A</u>, Nom, Prenom, Surnom, Mot_de_passe, Role)<br/> Description : l'attribut Role prend les valeurs 'G' ou 'J' seulement pour diff&eacute;rencier entre Administrateur ou g&eacute;rant (G) et Joueur ( J) et ceux pour
+                distinguer les interfaces de chacun d'entre eux.
+                <br/><br/>
+                <b>Terrain :</b> (<u>ID_T</u>, Nom_ter)<br/><br/>
+                <b>Reservation :</b> (Date_R, Hour_R, Date_RD, <u>#ID_RA</u>, <u>#ID_RT</u>)<br/> Description : L'attribut Date_R repr&eacute;sente la date de la r&eacute;servation d'un terrain, Hour_R est l'intervalle de la r&eacute;servation r&eacute;partit
+                en tranche horaire, Date_RD est la date de r&eacute;servation du terrain une fois &eacute;tablit, la diff&eacute;renciation des deux dates &eacute;tait utile pour pouvoir g&eacute;rer l'historique de toutes les r&eacute;servations. Vu
+                que r&eacute;servation est une association, elle avoir les identifiants des deux entit&eacute;s la reliant surtout que la cardinalit&eacute; est de 1-n, &agrave; savoir :
+                <br/>1. ID_RA cl&eacute; primaire et &eacute;trangère repr&eacute;sentant l'identifiant de Adherents.<br/> 2. ID_RT: cl&eacute; primaire et &eacute;trangère repr&eacute;sentant l'identifiant de Terrain.</p>
+            <br/>
+            <a href="Diagramme_Cepsum.pdf" download="Diagramme_Cepsum.pdf">Sch&eacute;ma du mod&egrave;le &eacute;ntite association</a>
+
+            <hr/>
+            <h2 id="fichiers">Liste des fichiers pour t&eacute;l&eacute;charger</h2>
+            <ul>
+                <li><a href="login.php" download="login.php">login.php</a></li>
+                <li><a href="signup.php" download="signup.php">signup.php</a></li>
+                <li><a href="logout.php" download="logout.php">logout.php</a></li>
+                <li><a href="home.php" download="home.php">home.php</a></li>
+                <li><a href="reservation.php" download="reservation.php">reservation.php</a></li>
+                <li><a href="admin_reserve.php" download="admin_reserve.php">admin_reserve.php</a></li>
+                <li><a href="historique.php" download="historique.php">historique.php</a></li>
+                <li><a href="config_conn.php" download="config_conn.php">config_conn.php</a></li>
+                <li><a href="close_db.php" download="close_db.php">close_db.php</a></li>
+                <li><a href="clubSportif.css" download="clubSportif.css">clubSportif.css</a></li>
+            </ul>
+            <hr/>
+            <h2 id="execute">Executer le programme</h2>
+            <ul>
+                <li><a href="http://www-ens.iro.umontreal.ca/~erfaniam/login.php">Page d'&eacute;ntrer</a></li>
+
+    </div>
+</body>
+
+</html>

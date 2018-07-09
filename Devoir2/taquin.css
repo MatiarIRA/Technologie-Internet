@@ -1,0 +1,61 @@
+/* Auteurs: Mohammad Hossein ERFANIAN AZMOUDEH (20031314) et Hanifa MALLEK (P1005515) */
+input:focus, textarea:focus, select:focus {
+	background: #ffd;
+}
+
+label{
+	font-weight: bold;
+}
+
+#grid{
+    width:500px;
+    height:300px;
+}
+
+fieldset {
+	background: #ddd;
+	border: 1px solid black;
+	margin: 0 auto;
+	width: 70%;	
+}
+
+legend {
+	border: 1px solid black;
+	background: #444;
+	color: white;
+	font-variant: small-caps;
+	letter-spacing: 0.1ex;
+	font-weight: bold;
+	padding: 0 0.2em;
+}
+
+input {
+	padding: 0 0.2ex;
+}
+
+.validation {
+    border: 2px solid green;
+}
+
+table {
+	margin-top : 20px;
+	border-spacing: 0px;
+	width:100%;
+	background-color: gray;
+}
+
+td{
+    margin: 0;
+	padding: 0;
+    border-bottom:1px solid #eee;
+	text-shadow: -2px 2px black, 2px -2px black, -2px 2px black, 2px -2px black;
+	color: white;
+	font-size: 25px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+td + td {
+border-left:1px solid #eee;
+}
+

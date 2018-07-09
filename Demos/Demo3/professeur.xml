@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<!DOCTYPE professeur SYSTEM "professeur.dtd">
+<professeur ID_Bureau="diro1233">
+    <info_personnel>
+        <nom_prof>L</nom_prof>
+        <prenom>G</prenom>
+        <image src="./img.jpg"/>
+        <fonction>Professeur titulaire</fonction>
+        <adresse num_bureau="diro1233"> Pav. André-Aisenstadt </adresse>
+        <telephone poste="1111">(514) 343-6111 </telephone>
+        <page_acceuil>http://www.iro.umontreal.ca/</page_acceuil>
+        <niveau_etude>
+            <diplome>Ph.D.</diplome>
+            <universite>Université de Montréal</universite>
+            <annee>1980</annee>
+        </niveau_etude>
+        <interets_recherche>
+            <interet>Traitement de la langue naturelle dans le cadre du laboratoire RALI</interet>
+            <interet>Extraction d’information</interet>
+            <interet>résumé automatique</interet>
+            <interet>traduction assistée par ordinateur</interet>
+            <interet>génération de texte</interet>
+            <interet>Application au Web sémantique</interet>
+        </interets_recherche>
+    </info_personnel>
+    <financements>
+        <financement>CRSNG-Pari CRD</financement>
+        <financement>CRSNG (découverte)</financement>
+        <financement>Secrétariat à la politique linguistique</financement>
+        <financement>MDER (Québec)</financement>
+        <financement>Société Gamma</financement>
+        <financement>PARI</financement>
+        <financement>PRECARN</financement>
+    </financements>
+    <collaborations>
+        <collaboration>
+            <institution>
+                <nom>Terminotix</nom>
+            </institution>
+        </collaboration>
+        <collaboration>
+            <institution>
+                <nom>North Side Inc.</nom>
+            </institution>
+        </collaboration>
+    </collaborations>
+    <contributions>
+        <contribution>
+            <auteurs>
+                <auteur>A. F</auteur>
+                <auteur> G. L</auteur>
+                <auteur>J.-P. D</auteur>
+            </auteurs>
+            <nom_article>Résumé de textes juridiques par identification de leur structure thématique </nom_article>
+            <referance_article page_fin="64" page_debut="39" rang_article="1" num_vol="45" annee="2004">
+                <nom_journal>Traitement automatique des langues</nom_journal>
+            </referance_article>
+        </contribution>
+        <contribution>
+            <auteurs>
+                <auteur>L. K</auteur>
+                <auteur>L. P</auteur>
+                <auteur>G. L</auteur>
+            </auteurs>
+            <nom_article>La réponse automatique comme solution à la gestion des relations avec la clientèle</nom_article>
+            <referance_article page_fin="114" page_debut="91" rang_article="3" num_vol="8" annee="2003">
+                <conference>Ingénierie des systèmes d’information</conference>
+            </referance_article>
+        </contribution>
+        <contribution>
+            <auteurs>
+                <auteur>P. L</auteur>
+                <auteur>G. L</auteur>
+                <auteur>M. L</auteur>
+            </auteurs>
+            <nom_article>Transtype : Development-evaluation cycles to boost translator’s productivity</nom_article>
+            <referance_article page_fin="98" page_debut="77" rang_article="2" num_vol="17" annee="2002">
+                <nom_journal>Machine Translation (Special Issue on Embedded Machine Translation Systems)</nom_journal>
+            </referance_article>
+        </contribution>
+        <contribution>
+            <auteurs>
+                <auteur>H. Saggion</auteur>
+                <auteur>G. L</auteur>
+            </auteurs>
+            <nom_article>Generating Informative and Indicative Summaries with SumUM</nom_article>
+            <referance_article page_fin="526" page_debut="479" rang_article="4" num_vol="28" annee="2002">
+                <nom_journal> Computational Linguistics</nom_journal>
+            </referance_article>
+        </contribution>
+        <contribution>
+            <auteurs>
+                <auteur>L. L</auteur>
+                <auteur>G. L</auteur>
+            </auteurs>
+            <nom_article>Raisonnement à base de cas textuel - état de l’art et perspectives futures</nom_article>
+            <referance_article page_fin="366" page_debut="339" rang_article="3" num_vol="16" annee="2002">
+                <nom_journal>Revue d’intelligence artificielle</nom_journal>
+            </referance_article>
+        </contribution>
+    </contributions>
+</professeur>
